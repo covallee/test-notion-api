@@ -6,10 +6,10 @@ exports.handler = async (event, context) => {
     let response
     try {
         response = await notion.pages.create({
-            parent:{ 
+            parent: { 
                 database_id: "797daf87bfd5422f9abae33dc1084bab"
               },
-              propertiers: {
+              properties: {
                 Name: {
                   title: [
                     {
