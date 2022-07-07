@@ -17,7 +17,7 @@
         button.addEventListener('click', () => triggerServerLessFunction())
 
         async function triggerServerLessFunction() {
-           const response = await fetch('/.netlify/functions/notion')
+           const response = await fetch('/.netlify/functions/notionClient')
            return response.json()
         }
     </script>
