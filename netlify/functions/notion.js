@@ -3,8 +3,22 @@ const fetch = require('node-fetch')
 
 const API_ENDPOINT = 'https://api.notion.com/v1/pages'
 
-let payload = {parent:
-    {type: "database_id", "database_id": "797daf87bfd5422f9abae33dc1084bab"}, propertiers: {type: "title", title: [{type: "text", "text": {content: "It work"}}]}}
+let payload = { 
+  parent:{ 
+    database_id: "797daf87bfd5422f9abae33dc1084bab"
+  },
+  propertiers: {
+    Name: {
+      title: [
+        {
+          text: {
+            content: "It work",
+          }
+        }
+      ]
+    },
+  }
+}
 
 exports.handler = async (event, context) => {
   let response
