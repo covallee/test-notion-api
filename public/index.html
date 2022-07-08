@@ -20,7 +20,7 @@
         let dbid = document.getElementById('databaseId').value
         button.addEventListener('click', () => triggerServerLessFunction(dbid))
 
-        async function triggerServerLessFunction() {
+        async function triggerServerLessFunction(dbid) {
             const params = new URLSearchParams({dbid: dbid})
             const response = await fetch(`/.netlify/functions/notionClient/?${params}`)
             return response.json()
