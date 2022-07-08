@@ -17,7 +17,7 @@
 
     <script>
         let button = document.querySelector('.cta')
-        let dbid = document.querySelector('#databaseId').value
+        let dbid = document.getElementById('databaseId').value
         button.addEventListener('click', () => triggerServerLessFunction(dbid))
 
         async function triggerServerLessFunction() {
