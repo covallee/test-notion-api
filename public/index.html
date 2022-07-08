@@ -8,17 +8,22 @@
 <body>
 
     <h1>Demo</h1>
+    <form>
+        <input type="text" name="database" id="databaseId">
+    </form>
 
     <button class="cta">Click Me</button>
     
 
     <script>
         let button = document.querySelector('.cta')
-        button.addEventListener('click', () => triggerServerLessFunction())
+        let dbid = document.querySelector('#databaseId').value
+        button.addEventListener('click', () => triggerServerLessFunction(dbid))
 
         async function triggerServerLessFunction() {
-           const response = await fetch('/.netlify/functions/notionClient')
-           return response.json()
+            const params = new URLSearchParams({dbid: dbid})
+            const response = await fetch(`/.netlify/functions/notionClient/?${params}`)
+            return response.json()
         }
     </script>
 </body>

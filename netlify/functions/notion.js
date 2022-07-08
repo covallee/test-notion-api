@@ -28,7 +28,7 @@ exports.handler = async (event, context) => {
         fetchOptions: {
             method: "POST",
             headers: {
-                "Authorization": `Bearer secret_Iv5KchMYDUaqiOV4RB1oa0kNxYHiKfwIRxnMb1lHAht`,
+                "Authorization": ``,
                 "Notion-Version": "2021-05-13",
                 "Content-Type": "application/json"
             },

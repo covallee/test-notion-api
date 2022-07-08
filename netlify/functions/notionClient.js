@@ -1,13 +1,13 @@
 const { Client } = require('@notionhq/client');
 
-const notion = new Client({ auth: 'secret_Iv5KchMYDUaqiOV4RB1oa0kNxYHiKfwIRxnMb1lHAht' });
+const notion = new Client({ auth: process.env.NOTION_TOKEN });
 
 exports.handler = async (event, context) => {
     let response
     try {
         response = await notion.pages.create({
             parent: { 
-                database_id: "797daf87bfd5422f9abae33dc1084bab"
+                database_id: event.queryStringParameters.dbid
               },
               properties: {
                 Name: {
