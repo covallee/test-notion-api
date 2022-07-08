@@ -17,11 +17,14 @@
 
     <script>
         let button = document.querySelector('.cta')
-        let dbid = document.getElementById('databaseId').value
-        button.addEventListener('click', () => triggerServerLessFunction(dbid))
+        
+        button.addEventListener('click', () => {
+            let databaseId = document.getElementById('databaseId').value
+            triggerServerLessFunction(databaseId)
+        })
 
-        async function triggerServerLessFunction(dbid) {
-            const params = new URLSearchParams({dbid: dbid})
+        async function triggerServerLessFunction(databaseId) {
+            const params = new URLSearchParams({dbid: databaseId})
             const response = await fetch(`/.netlify/functions/notionClient/?${params}`)
             return response.json()
         }
